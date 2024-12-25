@@ -1,0 +1,218 @@
+/* General Container Styles */
+.about-container {
+    background: #ffffff;
+    padding: 60px 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 50px auto;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styling */
+.about-header {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #d6336c; /* Pinkish color */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Introduction Styling */
+.about-introduction {
+    font-size: 1.2rem;
+    color: #6f42c1; /* Light purple-pink color */
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Title Styles */
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #d6336c; /* Pinkish color */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #d6336c; /* Pinkish border */
+    padding-bottom: 10px;
+}
+
+/* Mission Section */
+.mission-section .mission-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.mission-section p {
+    font-size: 1.2rem;
+    color: #777;
+    flex: 1;
+    margin-right: 20px;
+    line-height: 1.8;
+}
+
+.mission-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.mission-image:hover {
+    transform: scale(1.05);
+}
+
+/* Values Section */
+.values-section {
+    margin-bottom: 60px;
+}
+
+.values-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-icon {
+    font-size: 3rem;
+    color: #d6336c; /* Pinkish color */
+    margin-bottom: 15px;
+}
+
+.value-item h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.value-item p {
+    color: #777;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Adoption Process Section */
+.adoption-process-section {
+    margin-bottom: 60px;
+}
+
+.adoption-process {
+    list-style-type: decimal;
+    padding-left: 20px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.adoption-process li {
+    margin-bottom: 18px;
+}
+
+/* Gallery Section */
+.gallery-section {
+    margin-bottom: 60px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Get Involved Section */
+.actions {
+    margin-top: 30px;
+}
+
+.actions .btn {
+    font-size: 1.2rem;
+    padding: 14px 36px;
+    margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.actions .btn-primary {
+    background-color: #d6336c; /* Pinkish button */
+    color: white;
+    border: none;
+}
+
+.actions .btn-secondary {
+    background-color: #e83e8c; /* Lighter pink */
+    color: white;
+    border: none;
+}
+
+.actions .btn:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+}
+
+.actions .btn-primary:hover {
+    background-color: #bd2855; /* Darker pink */
+}
+
+.actions .btn-secondary:hover {
+    background-color: #cc3e9c; /* Darker lighter pink */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 40px 20px;
+    }
+
+    .values-list {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-section .mission-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .actions .btn {
+        width: 100%;
+    }
+}

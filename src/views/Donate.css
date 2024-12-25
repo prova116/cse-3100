@@ -1,0 +1,102 @@
+.donate-container {
+    background: #f4f6f9;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  
+  .donate-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .donate-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  
+  .donate-impact-section {
+    margin-bottom: 30px;
+  }
+  
+  .impact-header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .impact-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .impact-list li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .donate-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .donation-method {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .donation-method:hover {
+    transform: translateY(-5px);
+  }
+  
+  .donate-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+  }
+  
+  .donate-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .donate-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .donate-instructions {
+    margin-top: 30px;
+  }
+  
+  .thank-you-message {
+    margin-top: 50px;
+  }
+  
+  .thank-you-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+  }
+  

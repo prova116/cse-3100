@@ -1,0 +1,191 @@
+/* Contact Container */
+.contact-container {
+  background: linear-gradient(135deg, #f8c8d9, #f1a7c9); /* Soft pink gradient */
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Header */
+.contact-header {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #3b3b3b;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Description */
+.contact-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 35px;
+  line-height: 1.6;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+}
+
+/* Form Styling */
+.contact-form {
+  background: #f7cfe3;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+  width: 100%;
+}
+
+.contact-form .form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.contact-form .form-control {
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contact-form .form-control:focus {
+  border-color: #ff66b2; /* Light pink focus */
+  box-shadow: 0 0 8px rgba(255, 102, 178, 0.5);
+}
+
+.contact-form .form-control::placeholder {
+  font-style: italic;
+  color: #888;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff66b2; /* Pink button */
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ff3385; /* Darker pink on hover */
+  transform: scale(1.05);
+}
+
+/* Google Sign-Up */
+.google-signup {
+  margin-top: 40px;
+}
+
+.sign-up-text {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.btn-google {
+  background-color: #0e0d0d; /* Google red color */
+  color: white;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-google:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.google-logo {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 35px;
+  }
+
+  .contact-header {
+    font-size: 2.4rem;
+  }
+
+  .contact-description {
+    font-size: 1.1rem;
+  }
+
+  .contact-form .form-control {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .btn-google {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-container {
+    padding: 45px;
+  }
+
+  .submit-btn {
+    font-size: 1.15rem;
+    padding: 14px 18px;
+  }
+
+  .btn-google {
+    font-size: 1.15rem;
+    padding: 14px 18px;
+  }
+}
