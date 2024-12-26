@@ -1,5 +1,6 @@
 import './BaseLayout.css';
 import { Link, Outlet } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const BaseLayout = () => {
   return (
@@ -55,18 +56,18 @@ const BaseLayout = () => {
           <Link className="footer-link" to="/contact">Contact</Link> | 
           <Link className="footer-link" to="/donate">Donate</Link>
         </div>
+        <div className="social-links mt-3 d-flex justify-content-center">
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+    <i className="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+    <i className="fab fa-twitter"></i>
+  </a>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+    <i className="fab fa-instagram"></i>
+  </a>
+</div>
 
-        <div className="social-links mt-3">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram"></i>
-          </a>
-        </div>
       </footer>
     </div>
   );
