@@ -7,7 +7,15 @@ const availableCats = [
   { name: 'Simba', age: 2, breed: 'Maine Coon' },
   { name: 'Milo', age: 3, breed: 'Bengal' },
   { name: 'Oliver', age: 4, breed: 'Persian' },
+  { name: 'Bella', age: 1, breed: 'Ragdoll' },
+  { name: 'Charlie', age: 3, breed: 'British Shorthair' },
+  { name: 'Max', age: 2, breed: 'Abyssinian' },
+  { name: 'Daisy', age: 4, breed: 'Scottish Fold' },
+  { name: 'Loki', age: 2, breed: 'American Shorthair' },
+  { name: 'Cleo', age: 1, breed: 'Oriental Shorthair' },
 ];
+
+
 
 export default function AvailableCats() {
   const [cats, setCats] = useState([]);
@@ -17,7 +25,6 @@ export default function AvailableCats() {
   const [breedFilter, setBreedFilter] = useState('All');
 
   useEffect(() => {
-    // Fetch cat images from an API endpoint and assign it to the featuredCats list
     const fetchCatImages = async () => {
       try {
         const responses = await Promise.all(
@@ -28,11 +35,11 @@ export default function AvailableCats() {
 
         const catsWithImages = availableCats.map((cat, index) => ({
           ...cat,
-          image: responses[index][0]?.url || '', // Handle missing image URLs
+          image: responses[index][0]?.url || '',
         }));
 
         setCats(catsWithImages);
-        setFilteredCats(catsWithImages); // Initially show all cats
+        setFilteredCats(catsWithImages);
       } catch (error) {
         console.error('Error fetching cat images:', error);
       }
@@ -41,7 +48,6 @@ export default function AvailableCats() {
     fetchCatImages();
   }, []);
 
-  // Filter cats based on search input, age filter, and breed filter
   useEffect(() => {
     let filtered = cats.filter((cat) =>
       cat.name.toLowerCase().includes(search.toLowerCase())
@@ -58,7 +64,6 @@ export default function AvailableCats() {
     setFilteredCats(filtered);
   }, [search, ageFilter, breedFilter, cats]);
 
-  // Extract unique breeds for dropdown
   const uniqueBreeds = Array.from(new Set(availableCats.map((cat) => cat.breed)));
 
   return (
@@ -102,21 +107,26 @@ export default function AvailableCats() {
         </select>
       </div>
 
-      <div className="mt-2 row g-4 cats-container" id="cats-container">
+      <div className="mt-4 row g-4 cats-container" id="cats-container">
         {filteredCats.length > 0 ? (
           filteredCats.map((cat, i) => (
-            <div key={i} className="col-md-4">
+            <div key={i} className="col-md-4 col-lg-3">
               <div className="cat-card">
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="img-fluid mb-2"
-                  style={{ borderRadius: '8px', height: '200px', objectFit: 'cover' }}
+                  className="img-fluid"
+                  style={{
+                    borderRadius: '8px',
+                    height: '250px',
+                    width: '100%',
+                    objectFit: 'cover',
+                  }}
                 />
                 <div className="cat-info">
-                  <h3 className="h5 mb-1">{cat.name}</h3>
-                  <p className="mb-0">Age: {cat.age}</p>
-                  <p className="mb-0">Breed: {cat.breed}</p>
+                  <h3>{cat.name}</h3>
+                  <p>Age: {cat.age}</p>
+                  <p>Breed: {cat.breed}</p>
                 </div>
               </div>
             </div>
