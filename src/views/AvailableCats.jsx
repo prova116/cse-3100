@@ -3,10 +3,10 @@ import './AvailableCats.css';
 import { useEffect, useState } from 'react';
 
 const availableCats = [
-  { name: 'Luna', age: 1 },
-  { name: 'Simba', age: 2 },
-  { name: 'Milo', age: 3 },
-  { name: 'Oliver', age: 4 },
+  { name: 'Luna', age: 1, breed: 'Siamese' },
+  { name: 'Simba', age: 2, breed: 'Maine Coon' },
+  { name: 'Milo', age: 3, breed: 'Bengal' },
+  { name: 'Oliver', age: 4, breed: 'Persian' },
 ];
 
 export default function AvailableCats() {
@@ -14,6 +14,7 @@ export default function AvailableCats() {
   const [filteredCats, setFilteredCats] = useState([]);
   const [search, setSearch] = useState('');
   const [ageFilter, setAgeFilter] = useState('All');
+  const [breedFilter, setBreedFilter] = useState('All');
 
   useEffect(() => {
     // Fetch cat images from an API endpoint and assign it to the featuredCats list
@@ -40,7 +41,7 @@ export default function AvailableCats() {
     fetchCatImages();
   }, []);
 
-  // Filter cats based on search input and age filter
+  // Filter cats based on search input, age filter, and breed filter
   useEffect(() => {
     let filtered = cats.filter((cat) =>
       cat.name.toLowerCase().includes(search.toLowerCase())
@@ -50,8 +51,15 @@ export default function AvailableCats() {
       filtered = filtered.filter((cat) => cat.age === parseInt(ageFilter, 10));
     }
 
+    if (breedFilter !== 'All') {
+      filtered = filtered.filter((cat) => cat.breed === breedFilter);
+    }
+
     setFilteredCats(filtered);
-  }, [search, ageFilter, cats]);
+  }, [search, ageFilter, breedFilter, cats]);
+
+  // Extract unique breeds for dropdown
+  const uniqueBreeds = Array.from(new Set(availableCats.map((cat) => cat.breed)));
 
   return (
     <section className="text-center mt-4">
@@ -79,6 +87,19 @@ export default function AvailableCats() {
           <option value="3">3 Years</option>
           <option value="4">4 Years</option>
         </select>
+
+        <select
+          className="form-select mb-3"
+          value={breedFilter}
+          onChange={(e) => setBreedFilter(e.target.value)}
+        >
+          <option value="All">All Breeds</option>
+          {uniqueBreeds.map((breed, index) => (
+            <option key={index} value={breed}>
+              {breed}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="mt-2 row g-4 cats-container" id="cats-container">
@@ -95,6 +116,7 @@ export default function AvailableCats() {
                 <div className="cat-info">
                   <h3 className="h5 mb-1">{cat.name}</h3>
                   <p className="mb-0">Age: {cat.age}</p>
+                  <p className="mb-0">Breed: {cat.breed}</p>
                 </div>
               </div>
             </div>
